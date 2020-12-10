@@ -48,7 +48,8 @@ pipeline {
         success {
             script{
                 try{
-                    sh "echo npm install echo node app.js"
+                    sh "npm install"
+                    sh "node app.js"
                 }catch(ex){
                     sh'echo ex'
                 }
