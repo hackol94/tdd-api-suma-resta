@@ -39,13 +39,14 @@ pipeline {
                         reportName: "API tests report"
                         ])
                     }
+                    
                 }
             }
         }
     }
     post {
-         success {
-                sh 'deliver.sh'
+        success {
+            sh './deliver.sh'
         }
         failure {
             script{
