@@ -66,10 +66,11 @@ pipeline {
                 fileOperations([fileDeleteOperation(includes: 'SerenityCalculadoraTddNodeJs/target/*')])
             }
         }
-        }
         always{
             script{
                 sh "docker ps -a -q | xargs docker kill"
             }
         }
+        }
+        
 }
