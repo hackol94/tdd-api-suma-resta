@@ -20,7 +20,6 @@ pipeline {
         stage('Create Container') {
             steps {
              script{
-                        sh "docker ps -a -q | xargs docker kill"
                         sh "docker build -t nodejs-tdd/caculadora-suma-resta .";
                         sh "docker run -p 9095:3000 -d nodejs-tdd/caculadora-suma-resta";
                 }
@@ -67,5 +66,8 @@ pipeline {
                 fileOperations([fileDeleteOperation(includes: 'SerenityCalculadoraTddNodeJs/target/*')])
             }
         }
+        }
+        always{
+            sh "docker ps -a -q | xargs docker kill"
         }
 }
