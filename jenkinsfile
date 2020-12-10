@@ -68,6 +68,8 @@ pipeline {
         }
         }
         always{
-            sh "docker ps -a -q | xargs docker kill"
+            script{
+                sh "docker ps -a -q | xargs docker kill"
+            }
         }
 }
