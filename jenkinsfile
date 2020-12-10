@@ -65,7 +65,7 @@ pipeline {
             body: "File received: \n" +
                   "From package:  \n" +
                   "Package MD5:   \n" +
-                  "Jenkins Build: \n"
+                  "Jenkins Build: \n",
             attachmentsPattern: "SerenityCalculadoraTddNodeJs/target/site.zip"
             script{
                 fileOperations([fileDeleteOperation(includes: 'SerenityCalculadoraTddNodeJs/target/*')])
