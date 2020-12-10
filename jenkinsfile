@@ -1,5 +1,6 @@
 pipeline {
     agent any
+
     tools {
         gradle 'Gradle-6.1.4' 
     }
@@ -69,5 +70,4 @@ pipeline {
             }
         }
         }
-    
 }
