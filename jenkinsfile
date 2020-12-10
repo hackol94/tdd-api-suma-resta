@@ -68,6 +68,6 @@ pipeline {
                 fileOperations([fileDeleteOperation(includes: 'SerenityCalculadoraTddNodeJs/target/*')])
             }
         }
-    }
-    }
+        }
+    
 }
