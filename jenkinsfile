@@ -20,13 +20,9 @@ pipeline {
         stage('Create Container') {
             steps {
              script{
-                    try {
                         sh "docker ps -a -q | xargs docker kill"
                         sh "docker build -t nodejs-tdd/caculadora-suma-resta .";
                         sh "docker run -p 9095:3000 -d nodejs-tdd/caculadora-suma-resta";
-                    } catch (err) {
-                        throw(err)
-                    }
                 }
             }
         }
