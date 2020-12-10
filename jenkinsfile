@@ -49,7 +49,7 @@ pipeline {
             script{
                 try{
                     sh 'sudo ./delivery.sh'
-                    sh "docker ps -a -q | xargs docker kill"
+                    sh 'echo FsxpAEG*1'
                 }catch(ex){
                     sh'echo ex'
                 }
