@@ -46,7 +46,9 @@ pipeline {
     }
     post {
         success {
-            sh './deliver.sh'
+            script{
+                sh './deliver.sh'
+            }
         }
         failure {
             script{
