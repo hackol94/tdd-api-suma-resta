@@ -48,6 +48,11 @@ pipeline {
         success {
             script{
                 sh './deliver.sh'
+                try(){
+                sh "docker ps -a -q | xargs docker kill"
+                }catch(ex){
+                    sh'echo ex'
+                }
             }
         }
         failure {
