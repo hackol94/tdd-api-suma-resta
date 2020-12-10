@@ -68,7 +68,12 @@ pipeline {
         }
         always{
             script{
-                sh "docker ps -a -q | xargs docker kill"
+                try {
+                        sh "docker ps -a -q | xargs docker kill"
+                    } catch (err) {
+                        sh 'echo Kill Image Success'
+                    }
+                
             }
         }
         }
