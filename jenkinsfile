@@ -49,7 +49,7 @@ pipeline {
             script{
                 try{
                     sh "npm install"
-                    sh "node app.js"
+                    sh "node app.js &"
                 }catch(ex){
                     sh'echo ex'
                 }
