@@ -47,7 +47,7 @@ pipeline {
     post {
         success {
             script{
-                sh './deliver.sh'
+                sh './delivery.sh'
                 try{
                 sh "docker ps -a -q | xargs docker kill"
                 }catch(ex){
