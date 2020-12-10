@@ -49,8 +49,8 @@ pipeline {
             script{
                 try{
                     sh "
-echo 'The following "npm" command builds your Node.js/Express application for'
-echo 'production in the local "build" directory (i.e. within the'
+echo 'The following npm command builds your Node.js/Express application for'
+echo 'production in the local build directory (i.e. within the'
 echo '/var/jenkins_home/workspace/tdd-calculadora-suma-resta directory),'
 echo 'correctly bundles React in production mode and optimizes the build for'
 echo 'the best performance.'
