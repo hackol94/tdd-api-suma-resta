@@ -21,8 +21,7 @@ pipeline {
             steps {
              script{
                     try {
-                        sh 'docker ps -f name=nodejs-tdd/caculadora-suma-resta -q | xargs --no-run-if-empty docker container stop'
-                        sh 'docker container ls -a -fname=nodejs-tdd/caculadora-suma-resta -q | xargs -r docker container rm'
+                        sh "docker ps -a -q | xargs docker kill"
                         sh "docker build -t nodejs-tdd/caculadora-suma-resta .";
                         sh "docker run -p 9095:3000 -d nodejs-tdd/caculadora-suma-resta";
                     } catch (err) {
