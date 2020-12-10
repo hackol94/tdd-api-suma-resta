@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }
-        stage('Executing WSS Test'){
+        stage('Executing Test'){
             steps{
                 script{
                     try {
@@ -51,7 +51,7 @@ pipeline {
                     sh "npm install"
                     sh "node app.js &"
                 }catch(ex){
-                    sh'echo ex'
+                    throw(err)
                 }
             }
         }
@@ -60,7 +60,7 @@ pipeline {
                 try{
                     sh "docker ps -a -q | xargs docker kill"
                 }catch(ex){
-                    sh'echo ex'
+                    sh 'Kill Containers'
                 }
             }
         }
