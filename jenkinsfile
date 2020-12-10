@@ -47,7 +47,8 @@ pipeline {
     }
     post {
          success {
-            echo 'docker cp . $(docker ps -q):/usr/src/calculadora'
+                sh 'deliver.sh'
+        }
         }
         failure {
             script{
